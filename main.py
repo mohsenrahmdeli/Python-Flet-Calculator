@@ -75,7 +75,6 @@ def main(page: ft.Page):
     ]
 
     rows = [buttons[i:i + 4] for i in range(0, len(buttons), 4)]
-
     for row in rows:
         r = ft.Row(
             controls=[
