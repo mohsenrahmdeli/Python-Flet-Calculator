@@ -6,7 +6,6 @@ def main(page: ft.Page):
     page.window_height = 340
     page.window_width = 350
     calculated = False
-
     def click(e):
         nonlocal calculated
         if e.control.data in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', '+', '*', '-', '/']:
@@ -57,7 +56,6 @@ def main(page: ft.Page):
         elif e.control.data == '<':
             txt.value = txt.value[:-1]
             page.update()
-    
     txt = ft.TextField(
         border_color="#FFFFFF",
         color = "#FFFFFF",
@@ -65,7 +63,6 @@ def main(page: ft.Page):
         text_size=30
     )
     page.add(txt)
-
     buttons = [
         ('<', '<', '#EB5B00'), ('(', '(', '#EB5B00'), (')', ')', '#EB5B00'), ('/', '/', '#EB5B00'),
         ('7', '7', '#06D001'), ('8', '8', '#06D001'), ('9', '9', '#06D001'), ('*', '*', '#EB5B00'),
@@ -73,7 +70,6 @@ def main(page: ft.Page):
         ('1', '1', '#06D001'), ('2', '2', '#06D001'), ('3', '3', '#06D001'), ('+', '+', '#EB5B00'),
         ('C', 'c', '#FF0000'), ('0', '0', '#06D001'), ('.', '.', '#06D001'), ('=', '=', '#EB5B00')
     ]
-
     rows = [buttons[i:i + 4] for i in range(0, len(buttons), 4)]
     for row in rows:
         r = ft.Row(
